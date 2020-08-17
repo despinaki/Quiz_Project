@@ -1,12 +1,12 @@
 import React from 'react'
-import Form from './components/Form'
+import Home from './containers/Home'
 
 class App extends React.Component {
   
   render() {
     return (
       <div>
-        <Form/>
+        <Home />
       </div>
     )
   }
