@@ -21,7 +21,7 @@ class Quiz extends Component {
 }
 
 const mSTP = state => ({
-    results: state.quizQuestions.results
+        results: state.quizQuestions.results
 })
 
 export default connect(mSTP)(Quiz);
