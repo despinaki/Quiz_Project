@@ -1,12 +1,18 @@
 import React from 'react'
-import Home from './containers/Home'
+import { Home, Quiz, Results } from './containers'
+import { Switch, Route } from "react-router"
+
 
 class App extends React.Component {
   
   render() {
     return (
       <div>
-        <Home />
+        <Switch>
+          <Route exact path="/" component={ Home } />
+          <Route path="/questions" component={ Quiz } />
+          {/* <Route path="/results" component={ Results } /> */}
+        </Switch>
       </div>
     )
   }

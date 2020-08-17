@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { addSettings } from '../actions/Actions'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getQuestions } from '../actions/Actions';
+import { withRouter } from 'react-router-dom';
 
 class Form extends Component {
     state = {quizSettings: {}}
@@ -15,6 +16,7 @@ class Form extends Component {
         e.preventDefault();
         e.target.reset();
         this.props.add(this.state.quizSettings)
+        this.props.history.push("./questions")
     }
     
     render(){
@@ -32,24 +34,24 @@ class Form extends Component {
                 </select><br></br>
 
                 <label>Number of Questions: </label>
-                <input type="number" min="1" max="50" onChange={this.handleInput} name="questions"/> <br></br>
+                <input type="number" min="1" max="20" onChange={this.handleInput} name="questions"/> <br></br>
                 
                 <label>Select Difficulty: </label>
                 <select name="difficulty" onChange={this.handleInput}>
                    
                     <option value = "" selected disabled>Please select an option</option> 
-                    <option value = "Easy"> Easy </option>
-                    <option value = "Medium"> Medium </option>
-                    <option value = "Difficult"> Difficult </option>
+                    <option value = "easy"> Easy </option>
+                    <option value = "medium"> Medium </option>
+                    <option value = "difficult"> Difficult </option>
                 </select><br></br>
 
                 <label>Select Category: </label>
                 <select name="category" onChange={this.handleInput} >
                     
                     <option value="" selected disabled>Please select an option</option>
-                    <option value = "General Knowledge"> General Knowledge </option>
-                    <option value = "Sports"> Sports </option>
-                    <option value = "Celebrities"> Celebrities </option>
+                    <option value = "9"> General Knowledge </option>
+                    <option value = "21"> Sports </option>
+                    <option value = "26"> Celebrities </option>
                 </select><br></br>
 
                 <input type="submit"></input>
@@ -61,7 +63,7 @@ class Form extends Component {
 }
 
 const mDTP = dispatch => ({
-    add: (item) => dispatch(addSettings(item))
+    add: (item) => dispatch(getQuestions(item))
 })
 
-export default connect(null, mDTP)(Form);
+export default withRouter(connect(null, mDTP)(Form));
