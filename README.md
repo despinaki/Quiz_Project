@@ -21,3 +21,14 @@ Albie, Alex, Bhuma and Despoina's quiz project. Built with React and Redux.
 #### Issues
 - Using selected in form dropdown input presents error
 - Rendering answer forms for all players
+
+### Tuesday
+
+#### Aims
+- Display results on finishing quiz :white_check_mark:
+- Store answers with redux :white_check_mark:
+- Allow multiple players to play :bangbang:
+
+#### Issues
+- Button group disabling bug adds extra button
+- Multiple players answer button grouping
