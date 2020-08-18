@@ -13,13 +13,13 @@ class Players extends React.Component {
         e.preventDefault()
         e.target.reset()
         this.props.add(this.state.names)
-        // this.props.history.push("./questions")
+        this.props.history.push("./questions")
 
     }
 
     handleChange = (e) => {
         this.state.names[e.target.name] = e.target.value
-        this.setState({names}) 
+        // this.setState({names}) 
     }
     
     createNameForms = () => {

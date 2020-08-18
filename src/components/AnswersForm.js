@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 
 class AnswersForm extends Component {
-
     render() {
-
         return (
-            <div>               
-                <input type="radio" name="MultipleChoice" value = "A" />
-                <label for="A"> A </label>
-                <input type="radio" name="MultipleChoice" value = "B" />
-                <label for="B"> B </label>
+            <div>              
+                <input type="radio" name="MultipleChoice" value ={this.props.info.question.incorrect_answers[0]} />
+                <label for={this.props.info.question.incorrect_answers[0]}> {this.props.info.question.incorrect_answers[0]} </label>
+                <input type="radio" name="MultipleChoice" value = {this.props.info.question.incorrect_answers[1]} />
+                <label for={this.props.info.question.incorrect_answers[1]}> {this.props.info.question.incorrect_answers[1]} </label>
                 <input type="radio" name="MultipleChoice" value = "C" />
                 <label for="C"> C </label>
                 <input type="radio" name="MultipleChoice" value = "D" />
@@ -21,5 +19,6 @@ class AnswersForm extends Component {
     }
 }
 
+ 
 
 export default AnswersForm;

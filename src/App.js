@@ -1,6 +1,7 @@
 import React from 'react'
-import { Home, Quiz, Results } from './containers'
+import { Home, Quiz } from './containers'
 import Players from './components/Players'
+import ResultsForm from './components/ResultsForm'
 import { Switch, Route } from "react-router"
 
 
@@ -13,7 +14,7 @@ class App extends React.Component {
           <Route exact path="/" component={ Home } />
           <Route path="/questions" component={ Quiz } />
           <Route path="/players" component={ Players } />
-          {/* <Route path="/results" component={ Results } /> */}
+          <Route path="/results" component= { ResultsForm }/>
         </Switch>
       </div>
     )
