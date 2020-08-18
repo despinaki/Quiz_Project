@@ -1,5 +1,6 @@
 const initState = {
     quizSettings: "",
+    playerNames: [],
     quizQuestions: []
 }
 
@@ -8,6 +9,9 @@ const FormReducer = (state = initState, action) => {
         case 'ADD_SETTINGS':
             const settings = action.payload
             return {...state, quizSettings: settings}
+        case 'ADD_PLAYERS':
+            const players = action.payload
+            return {...state, playerNames: players}
         case "ADD_QUESTIONS":
             const questions = action.payload
             return {...state, quizQuestions: questions }

@@ -8,6 +8,11 @@ const addQuestions = quizQuestions => ({
     payload: quizQuestions
 })
 
+export const addPlayers = playerNames => ({
+    type: 'ADD_PLAYERS',
+    payload: playerNames
+})
+
 export const getQuestions = quizSettings => {
     return async dispatch => {
         try {

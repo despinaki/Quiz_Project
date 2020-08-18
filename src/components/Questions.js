@@ -5,11 +5,10 @@ import AnswersForm from "./AnswersForm"
 
 class Questions extends Component {
     renderQuestion = () => {
-        console.log(this.props)
         let array = this.props.question.incorrect_answers
         array.push(this.props.question.correct_answer)
         this.shuffleAnswers(array)
-        console.log(typeof(this.props.players))
+
         return (
             <>
             <h3>{this.props.question.question}</h3>
@@ -18,34 +17,10 @@ class Questions extends Component {
                     <h4>{item1}</h4>
                 </div>
             ))}
-            {Array(this.props.players).fill(<AnswersForm />)}
-            {/* {this.renderAnswerForms} */}
+            {Array(this.props.players).fill(<div><h4>Player {}</h4> <AnswersForm /></div>)}
             </>
         )
     }
-
-    // showForm = () => {
-    //     return (
-    //         <AnswersForm/>
-    //     )
-    // }
-
-
-
-    // renderAnswerForms = () => {
-    //     for(let i=0; i < this.props.players; i++){
-    //         React.createElement("h1",{id:"heading"}, "Hello World")
-    //         ReactDOM.render(div,document.getElementById("root"))
-            // this.showForm()
-        // }
-        // let i = 0;
-        // while(i < this.props.players){
-        //     (<AnswersForm/>)
-        //     i++
-        // }
-
-
-    // }
 
     
     shuffleAnswers = (array) => {
@@ -63,16 +38,14 @@ class Questions extends Component {
         return (
             <div>
                 {this.props.question ?  this.renderQuestion() : "you've made a mess of this"}
-                
             </div>
         ) 
     }
 }
 
 
-const mSTP = (state, ownProps) => ({
-    players: Number(state.quizSettings.players),
-    // question: ownProps
+const mSTP = (state) => ({
+    players: Number(state.quizSettings.players)
 })
 
 export default connect(mSTP)(Questions);

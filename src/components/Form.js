@@ -16,7 +16,7 @@ class Form extends Component {
         e.preventDefault();
         e.target.reset();
         this.props.add(this.state.quizSettings)
-        this.props.history.push("./questions")
+        this.props.history.push("./players")
     }
     
     render(){
