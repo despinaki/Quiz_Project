@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 
-class AnswersForm extends Component {
-    render() {
+class ResultsForm extends Component {
 
+    displayScore() {
+        let questionNumber = this.props.questionNumber
+        let correctAnswers = this.props.answers
+        let score = correctAnswers.filter(answer => answer == true )
+        return (
+            <> 
+            {`You scored ${score.length} out of ${questionNumber}!`}
+            </>
+        )
+    }
+    render() {
         return (
             <div>              
-                <input type="radio" name="MultipleChoice" value ={this.props.question.question.incorrect_answers[0]} />
-                <label for={this.props.question.question.incorrect_answers[0]}> {this.props.question.question.incorrect_answers[0]} </label>
-                <input type="radio" name="MultipleChoice" value = {this.props.question.question.incorrect_answers[1]} />
-                <label for={this.props.question.question.incorrect_answers[1]}> {this.props.question.question.incorrect_answers[1]} </label>
-                <input type="radio" name="MultipleChoice" value = "C" />
-                <label for="C"> C </label>
-                <input type="radio" name="MultipleChoice" value = "D" />
-                <label for="D"> D </label>
-
+                {this.props.answers ? this.displayScore() : "Answers are not here"}
             </div>
         )
     }
 }
 
- 
+const mSTP = state => ({
+    answers: state.playerAnswers,
+    questionNumber: state.quizSettings.questions
+})
 
-export default AnswersForm;
+export default connect(mSTP)(ResultsForm);

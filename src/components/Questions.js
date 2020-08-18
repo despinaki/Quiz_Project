@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import ReactDOM from 'react-dom'
+import { addAnswer } from '../actions/Actions'
 
 
 class Questions extends Component {
@@ -34,9 +35,15 @@ class Questions extends Component {
 
     click = (e) => {
         console.log(this.props.question.correct_answer)
-        console.log(e.target.value == this.props.question.correct_answer ? true : false)
+        let answer = (e.target.value == this.props.question.correct_answer ? true : false)
         console.log(e.target.name)
         this.setState({disabled: true})
+        
+        const info = {
+            player: e.target.name,
+            answer: answer
+        }
+        this.props.add(info)
     }
     
     renderAnswersForm = (players) => {
@@ -51,7 +58,7 @@ class Questions extends Component {
             </div>
         ))
     }
-    
+
     render() {
         return (
             <div>
@@ -62,7 +69,10 @@ class Questions extends Component {
 }
 
 const mSTP = state => ({
-       players: state.playerNames
+    players: state.playerNames
 })
 
-export default connect(mSTP)(Questions);
+const mDTP = dispatch => ({
+    add: answer => dispatch(addAnswer(answer))
+})
+export default connect(mSTP, mDTP)(Questions);
