@@ -19,7 +19,7 @@ const FormReducer = (state = initState, action) => {
         case 'ADD_ANSWER':
             const player = action.payload.player
             const answer = action.payload.answer
-            return {...state, playerAnswers: [answer, ...state.playerAnswers]}
+            return {...state, playerAnswers: [...state.playerAnswers, {player, answer}]}
         default:
             return state;
     }

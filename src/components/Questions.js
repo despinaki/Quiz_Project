@@ -5,15 +5,17 @@ import { addAnswer } from '../actions/Actions'
 
 
 class Questions extends Component {
-
-    state= {
-        disabled: false
+    constructor(props){
+        super(props)
+        let answersArray = this.props.question.incorrect_answers
+        answersArray.push(this.props.question.correct_answer)
+        this.shuffleAnswers(answersArray)
+        this.state = {answers: answersArray}
     }
+  
 
     renderQuestion = () => {
-        let array = this.props.question.incorrect_answers
-        array.push(this.props.question.correct_answer)
-        this.shuffleAnswers(array)
+        
         return (
             <>
             <h3>{this.props.question.question}</h3>
@@ -34,10 +36,8 @@ class Questions extends Component {
     }
 
     click = (e) => {
-        console.log(this.props.question.correct_answer)
         let answer = (e.target.value == this.props.question.correct_answer ? true : false)
-        console.log(e.target.name)
-        this.setState({disabled: true})
+        this.setState({[e.target.name]: true})
         
         const info = {
             player: e.target.name,
@@ -51,8 +51,8 @@ class Questions extends Component {
             <div key={index}>
                 {item}
                 <div className={`btn-group`} >
-                    {this.props.question.incorrect_answers.map((item1, idx) => (
-                        <button disabled={this.state.disabled} onClick={this.click} key={idx} name={item} value={item1}>{item1}</button>
+                    {this.state.answers.map((item1, idx) => (
+                        <button disabled={this.state[item]} onClick={this.click} key={idx} name={item} value={item1}>{item1}</button>
                     ))}
                 </div>
             </div>
@@ -62,7 +62,7 @@ class Questions extends Component {
     render() {
         return (
             <div>
-                {this.props.question ?  this.renderQuestion() : "you've made a mess of this"}
+                {this.props.question ? this.renderQuestion() : "you've made a mess of this"}
             </div>
         ) 
     }
@@ -73,6 +73,6 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    add: answer => dispatch(addAnswer(answer))
+    add: (info) => dispatch(addAnswer(info))
 })
 export default connect(mSTP, mDTP)(Questions);
