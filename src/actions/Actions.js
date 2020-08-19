@@ -13,7 +13,7 @@ export const addPlayers = playerNames => ({
     payload: playerNames
 })
 
-export const addAnswer = answer => ({
+export const addAnswer = (answer) => ({
     type: 'ADD_ANSWER',
     payload: answer
 })

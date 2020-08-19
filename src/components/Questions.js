@@ -6,9 +6,9 @@ import { addAnswer } from '../actions/Actions'
 
 class Questions extends Component {
 
-    state= {
-        disabled: false
-    }
+    // state= {
+    //     disabled: false
+    // }
 
     renderQuestion = () => {
         let array = this.props.question.incorrect_answers
@@ -34,10 +34,10 @@ class Questions extends Component {
     }
 
     click = (e) => {
-        console.log(this.props.question.correct_answer)
+        // console.log(this.props.question.correct_answer)
         let answer = (e.target.value == this.props.question.correct_answer ? true : false)
-        console.log(e.target.name)
-        this.setState({disabled: true})
+        // console.log(e.target.name)
+        // this.setState({disabled: true})
         
         const info = {
             player: e.target.name,
@@ -52,7 +52,7 @@ class Questions extends Component {
                 {item}
                 <div className={`btn-group`} >
                     {this.props.question.incorrect_answers.map((item1, idx) => (
-                        <button disabled={this.state.disabled} onClick={this.click} key={idx} name={item} value={item1}>{item1}</button>
+                        <button onClick={this.click} key={idx} name={item} value={item1}>{item1}</button>
                     ))}
                 </div>
             </div>
@@ -62,7 +62,7 @@ class Questions extends Component {
     render() {
         return (
             <div>
-                {this.props.question ?  this.renderQuestion() : "you've made a mess of this"}
+                {this.props.question ? this.renderQuestion() : "you've made a mess of this"}
             </div>
         ) 
     }
@@ -73,6 +73,6 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    add: answer => dispatch(addAnswer(answer))
+    add: (info) => dispatch(addAnswer(info))
 })
 export default connect(mSTP, mDTP)(Questions);
