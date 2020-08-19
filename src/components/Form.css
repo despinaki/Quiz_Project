@@ -1,0 +1,32 @@
+input[type="submit"] {
+    background-color: #2E3047;
+    color: #707793;
+    border: 3px #707793 solid;
+    border-radius: 16px;
+    justify-self: center;
+    width: 100px;
+    font-family: "Segoe UI";
+   
+}
+
+input[type="submit"]:hover {
+    color: #3BBA9C;
+    border-color: #3BBA9C;
+    cursor: pointer;
+}
+form {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    margin: 0 auto;
+    width: 50%;
+    grid-row-gap: 50px;
+}
+
+#form-inputs {
+    width: 100%;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-row-gap: 50px;
+    color:  #3BBA9C;
+}
+

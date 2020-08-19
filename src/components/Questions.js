@@ -50,7 +50,7 @@ class Questions extends Component {
         return players.map((item, index) => (
             <div key={index}>
                 {item}
-                <div className={`btn-group`} >
+                <div className="btn-group">
                     {this.props.question.incorrect_answers.map((item1, idx) => (
                         <button disabled={this.state.disabled} onClick={this.click} key={idx} name={item} value={item1}>{item1}</button>
                     ))}
