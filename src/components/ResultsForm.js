@@ -1,28 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { withRouter } from 'react-router-dom';
 
 class ResultsForm extends Component {
-    state = { playerScores: {} }
-    // displayScore() {
-    //     let questionNumber = this.props.questionNumber
-    //     let correctAnswers = this.props.answers
-    //     let score = correctAnswers.filter(answer => answer == true )
-    //     return (
-    //         <> 
-    //         {`You scored ${score.length} out of ${questionNumber}!`}
-    //         </>
-    //     )
-    // }
+    state = { playerScores: {} }    
 
     displayScore() {
-        // console.log(
-        // this.props.players.forEach((item) => {
-        //     this.props.answers.filter(answer => answer.player == item ? answer.answer : "")
-        // }))
         let players = this.props.players;
-        let questionNumber = this.props.questionNumber;
         let answers = this.props.answers;
-        let score = 0;
 
         for (const player of players) {
             this.state.playerScores[player] = 0;
@@ -35,21 +20,42 @@ class ResultsForm extends Component {
                 }
             }
         }
+
+        let sortable = [];
+        for (const player in this.state.playerScores) {
+            sortable.push([player, this.state.playerScores[player]])
+        }
+        sortable.sort(((a, b) => b[1]-a[1]))
+
         return (
             <> 
-            {this.props.players.map((item, index) => {
-                return (
-                    <p key={index}>{`${item} scored ${this.state.playerScores[item]}`}</p>
-                )
+            {sortable.map((item, index) => {
+                if (index == 0) {
+                    return (
+                        <p key={index}>{`👑 ${item[0]}:  ${item[1]} pts!`}</p>
+                    )
+                } else {
+                    return (
+                        <p key={index}>{index + 1} {`. ${item[0]}: ${item[1]} pts`}</p>
+                    )
+                }
+                
             })}
             </>
         )
+    }
+
+    goToHome = e => {
+        this.props.history.push("./")
+        location.reload;
+        return false;
     }
 
     render() {
         return (
             <div>              
                 {this.props.answers ? this.displayScore() : "Answers are not here"}
+                <input type="submit" value="Play Again" onClick={this.goToHome}/>
             </div>
         )
     }
@@ -61,4 +67,4 @@ const mSTP = state => ({
     players: state.playerNames
 })
 
-export default connect(mSTP)(ResultsForm);
+export default withRouter(connect(mSTP)(ResultsForm));

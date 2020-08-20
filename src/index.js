@@ -7,6 +7,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import FormReducer from "./reducers/FormReducer"
 import { BrowserRouter } from 'react-router-dom'
+// import 'react-bulma-components/dist/react-bulma-components.min.css';
 
 const store = createStore(FormReducer, composeWithDevTools(applyMiddleware(thunk)));
 

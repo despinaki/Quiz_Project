@@ -3,6 +3,7 @@ import { Home, Quiz } from './containers'
 import Players from './components/Players'
 import ResultsForm from './components/ResultsForm'
 import { Switch, Route } from "react-router"
+import './App.css'
 
 
 class App extends React.Component {

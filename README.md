@@ -32,3 +32,17 @@ Quiz project made by Albie ([@albieduffy](https://github.com/albieduffy)), Alex 
 #### Issues
 - Button group disabling bug adds extra button
 - Multiple players answer button grouping
+
+### Wednesday
+
+#### Aims
+- Complete functionality for one user :white_check_mark:
+- Add styling :white_check_mark:
+- Remove button duplication bug :white_check_mark:
+- Add functionality for multiple users :white_check_mark:
+- Add functionality for users across a server using Socket :bangbang:
+
+#### Issues
+- Button duplication bug
+- Storing answer data for each player
+
