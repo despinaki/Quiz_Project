@@ -12,7 +12,6 @@ class Players extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        e.target.reset()
         this.props.add(this.state.names)
         this.props.history.push("./questions")
 
@@ -38,10 +37,15 @@ class Players extends React.Component {
 
     render() {
         return(
+            <>
+            <h1>
+                Enter player names:
+            </h1>
             <form id="playersForm" onSubmit={this.handleSubmit}>
             {this.createNameForms()}
             <input className="button" style={{paddingTop: "4px"}} type="submit" value="Play!"/>
             </form>
+            </>
         )
     }
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Home, Quiz } from './containers'
-import Players from './components/Players'
-import ResultsForm from './components/ResultsForm'
+import { Players, ResultsForm } from './components'
 import { Switch, Route } from "react-router"
 import './App.css'
 
