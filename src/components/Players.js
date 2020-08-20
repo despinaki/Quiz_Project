@@ -38,7 +38,7 @@ class Players extends React.Component {
 
     render() {
         return(
-            <form onSubmit={this.handleSubmit}>
+            <form id="playersForm" onSubmit={this.handleSubmit}>
             {this.createNameForms()}
             <input className="button" style={{paddingTop: "4px"}} type="submit" value="Play!"/>
             </form>

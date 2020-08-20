@@ -3,5 +3,10 @@ label {
 }
 
 .players {
-    margin-top: 10%;
+    margin-bottom: 50px;
+    text-align:center;
+}
+
+#playersForm {
+    padding: 100px;
 }

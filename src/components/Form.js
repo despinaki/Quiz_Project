@@ -25,9 +25,9 @@ class Form extends Component {
          
         return(
             <div>
-            <form onSubmit={this.handleSubmit}>  
+            <form id="settingsForm" onSubmit={this.handleSubmit}>  
             <div id="form-inputs">
-            <div>
+                <div>
                     <label>Select No. of Players: </label> <br/>
                     <select className= "dropdown-btn" name="players" onChange={this.handleInput}>
                     

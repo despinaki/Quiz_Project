@@ -14,7 +14,7 @@ input[type="submit"]:hover {
     border-color: #3BBA9C;
     cursor: pointer;
 }
-form {
+#settingsForm, .button {
     display: grid;
     grid-template-rows: 3fr 1fr;
     margin: 0 auto;
