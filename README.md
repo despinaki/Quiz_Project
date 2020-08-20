@@ -38,7 +38,7 @@ Albie, Alex, Bhuma and Despoina's quiz project. Built with React and Redux.
 #### Aims
 - Complete functionality for one user :white_check_mark:
 - Add styling :white_check_mark:
-- Remove button duplicatino bug :white_check_mark:
+- Remove button duplication bug :white_check_mark:
 - Add functionality for multiple users :white_check_mark:
 - Add functionality for users across a server using Socket :bangbang:
 
