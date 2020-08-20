@@ -32,7 +32,7 @@ export const getQuestions = quizSettings => {
 
 const fetchQuestions = async quizSettings => {
     try {
-        const resp = await fetch(`https://opentdb.com/api.php?amount=${quizSettings.questions}&category=${quizSettings.category}&difficulty=${quizSettings.difficulty}&type=multiple`)
+        const resp = await fetch(`https://opentdb.com/api.php?amount=${quizSettings.questions}&category=${quizSettings.category}&difficulty=${quizSettings.difficulty}&type=multiple&encode=url3986`)
         const data = await resp.json()
         return data
     } catch (err) {

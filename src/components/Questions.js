@@ -17,10 +17,9 @@ class Questions extends Component {
   
 
     renderQuestion = () => {
-        
         return (
             <>
-            <h3 id="questions">{this.props.question.question}</h3>
+            <h3 id="questions">{decodeURIComponent(this.props.question.question)}</h3>  
             {this.renderAnswersForm(this.props.players)}
             </>
         )
@@ -54,7 +53,7 @@ class Questions extends Component {
                 {item}
                 <div id="btn-group" >
                     {this.state.answers.map((item1, idx) => (
-                        <button disabled={this.state[item]} id="btn" onClick={this.click} key={idx} name={item} value={item1}>{item1}</button>  
+                        <button disabled={this.state[item]} id="btn" onClick={this.click} key={idx} name={item} value={item1}>{decodeURIComponent(item1)}</button>  
                     ))}
                 </div>
             </div>
