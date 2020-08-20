@@ -1,0 +1,11 @@
+.results{
+   
+    font-size: 25px;
+    margin-left:40%;
+    color: azure;
+}
+
+#results-submit {
+    margin-top: 10%;
+    margin-left: 45%;
+}

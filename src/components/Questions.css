@@ -1,9 +1,6 @@
 #btn:hover {
     opacity: 0.5;
 }
-#btn {
-    border-radius: 15%;
-}
 
 #questions {
     margin-left:15%;
