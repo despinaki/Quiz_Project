@@ -44,3 +44,4 @@ Albie, Alex, Bhuma and Despoina's quiz project. Built with React and Redux.
 
 #### Issues
 - Button duplication bug
+- Storing answer data for each player
