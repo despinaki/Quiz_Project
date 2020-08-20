@@ -51,7 +51,9 @@ class ResultsForm extends Component {
     }
 
     goToHome = e => {
-        this.props.history.push("./")
+
+        this.props.history.push("./");
+        window.location.reload(true);
     }
 
     render() {
