@@ -20,7 +20,10 @@ class Questions extends Component {
         return (
             <>
             <h3 id="questions">{decodeURIComponent(this.props.question.question)}</h3>  
-            {this.renderAnswersForm(this.props.players)}
+            <div className="answers-container">
+                {this.renderAnswersForm(this.props.players)}
+            </div>
+            <hr></hr>
             </>
         )
     }
@@ -49,11 +52,12 @@ class Questions extends Component {
     
     renderAnswersForm = (players) => {
         return players.map((item, index) => (
+          
             <div id="names" key={index}>
                 {item}
                 <div id="btn-group" >
                     {this.state.answers.map((item1, idx) => (
-                        <button disabled={this.state[item]} id="btn" onClick={this.click} key={idx} name={item} value={item1}>{decodeURIComponent(item1)}</button>  
+                        <button disabled={this.state[item]} id="btn" className="button" onClick={this.click} key={idx} name={item} value={item1}>{decodeURIComponent(item1)}</button> 
                     ))}
                 </div>
             </div>

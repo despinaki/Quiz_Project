@@ -22,7 +22,7 @@ class Quiz extends Component {
             <div id="container">
                 <h1 id="heading">Questions : </h1>
                 {this.props.results ? this.renderQuestions(this.props.results) : "there are not results"}
-                <input id="submit-end"type="submit" onClick= {this.goToResults}/>
+                <input className="button" style={{paddingTop: "4px"}} id="submit-end"type="submit" onClick= {this.goToResults}/>
             </div>
         )
     }

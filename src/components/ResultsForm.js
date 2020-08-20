@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
+import './ResultsForm.css';
 
 class ResultsForm extends Component {
     state = { playerScores: {} }    
@@ -30,15 +31,19 @@ class ResultsForm extends Component {
         return (
             <> 
             {sortable.map((item, index) => {
+              
                 if (index == 0) {
+                    
                     return (
-                        <p key={index}>{`👑 ${item[0]}:  ${item[1]} pts!`}</p>
+                        <p className="results" id="winner" key={index}>{`👑 ${item[0]}:  ${item[1]} pts!`}</p>
                     )
                 } else {
                     return (
-                        <p key={index}>{index + 1} {`. ${item[0]}: ${item[1]} pts`}</p>
+                        <p className="results" key={index}>{index + 1} {`. ${item[0]}: ${item[1]} pts`}</p>
                     )
                 }
+
+
                 
             })}
             </>
@@ -46,15 +51,17 @@ class ResultsForm extends Component {
     }
 
     goToHome = e => {
+
         this.props.history.push("./");
         window.location.reload(true);
     }
 
     render() {
         return (
-            <div>              
+            <div>  
+                <h1>And the winner is...</h1>            
                 {this.props.answers ? this.displayScore() : "Answers are not here"}
-                <input type="submit" value="Play Again" onClick={this.goToHome}/>
+                <input type="submit" style={{paddingTop: "4px",paddingLeft: "0.75%"}} className = "button" id="results-submit" value="Play Again" onClick={this.goToHome}/>
             </div>
         )
     }

@@ -7,8 +7,8 @@ class Home extends Component{
     render(){
         return (
             <div>
-                <h1>QuizApp</h1>
-                <Form />
+                <h1>Crown</h1>
+                <Form/>
             </div>
         )
     }

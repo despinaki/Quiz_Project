@@ -14,7 +14,7 @@ input[type="submit"]:hover {
     border-color: #3BBA9C;
     cursor: pointer;
 }
-form {
+#settingsForm, .button {
     display: grid;
     grid-template-rows: 3fr 1fr;
     margin: 0 auto;
@@ -26,11 +26,20 @@ form {
     width: 100%;
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
-    grid-row-gap: 50px;
+    grid-row-gap: 100px;
     color:  #3BBA9C;
 }
 
 
+.dropdown-btn {
+    background-color: #707793; 
+    /* opacity: 0.5; */
+    /* color:  #3BBA9C; */
+    color: white;
+    width: 160px;
+}
 
+
+/* option:hover{background-color:yellow;} */
 
 

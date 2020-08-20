@@ -1,0 +1,18 @@
+label {
+    color:  #3BBA9C;
+}
+
+.players {
+    margin-bottom: 50px;
+    text-align:center;
+}
+
+#playersForm {
+    padding: 100px;
+}
+
+.player-input {
+    background-color: #707793; 
+    color:white;
+}
+

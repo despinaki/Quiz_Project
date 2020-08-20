@@ -1,0 +1,17 @@
+.results{
+    font-size: 25px;
+    text-align:center;
+    color: azure;
+    margin-top: 20px;
+}
+
+#results-submit {
+    margin-top: 10%;
+    justify-self: center;
+}
+
+#winner {
+    font-size: 35px;
+    font-weight: bold;
+    color: gold;
+}
