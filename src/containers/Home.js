@@ -8,7 +8,7 @@ class Home extends Component{
         return (
             <div>
                 <h1>QuizApp</h1>
-                <Form/>
+                <Form />
             </div>
         )
     }
