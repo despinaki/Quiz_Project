@@ -10,6 +10,7 @@ class ResultsForm extends Component {
         let players = this.props.players;
         let answers = this.props.answers;
 
+        // this is a lot of nesting! Could we be increasing the scores as users select their answers?
         for (const player of players) {
             this.state.playerScores[player] = 0;
             for (const answer of answers) {

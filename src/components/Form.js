@@ -11,12 +11,14 @@ class Form extends Component {
     handleInput = e => {
         let settings = this.state.quizSettings
         settings[e.target.name] = e.target.value
-        this.setState({settings})
+        this.setState({settings}) // you initialize state with quizSettings,
+        // are you intentionally making a new key here?
     }
 
     handleSubmit = e => {
         e.preventDefault();
-        e.target.reset();
+        e.target.reset(); // is this necessary? 
+        // As you are navigating to /players which unmounts this component, the form will be reset anyway upon next mount
         this.props.add(this.state.quizSettings)
         this.props.history.push("./players")
     }

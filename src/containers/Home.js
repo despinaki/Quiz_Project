@@ -3,7 +3,7 @@ import Form from "../components/Form"
 import './Homepage.css'
 
 class Home extends Component{
-
+    // why is this a class component?
     render(){
         return (
             <div>

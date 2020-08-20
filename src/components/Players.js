@@ -12,13 +12,14 @@ class Players extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        e.target.reset()
+        e.target.reset() // why is this needed?
         this.props.add(this.state.names)
         this.props.history.push("./questions")
 
     }
 
     handleChange = (e) => {
+        // NO! DO NOT DIRECTLY MANIPULATE STATE! USE SETSTATE!!!
         this.state.names[e.target.name] = e.target.value
         // this.setState({names}) 
     }

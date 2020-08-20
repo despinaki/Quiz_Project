@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom' // Why?
 import { addAnswer } from '../actions/Actions'
 
 import './Questions.css'
@@ -50,7 +50,8 @@ class Questions extends Component {
     
     renderAnswersForm = (players) => {
         return players.map((item, index) => (
-          
+          // some additional abstraction into small functional components
+          // would aid readability here
             <div id="names" key={index}>
                 {item}
                 <div id="btn-group" >
