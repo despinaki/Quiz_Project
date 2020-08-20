@@ -47,8 +47,6 @@ class ResultsForm extends Component {
 
     goToHome = e => {
         this.props.history.push("./")
-        location.reload;
-        return false;
     }
 
     render() {

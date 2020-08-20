@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addPlayers } from '../actions/Actions'
 import { withRouter } from 'react-router-dom'
+import './Players.css'
 
 class Players extends React.Component {
 
@@ -26,7 +27,7 @@ class Players extends React.Component {
         let players = Array(this.props.players).fill(`Player`)
         return (
             players.map((item, index) => (
-                <div key={index}>
+                <div class ="players" key={index}>
                 <label>{item} {index + 1}</label>
                 <input type ="text"  name={index} onChange={this.handleChange} placeholder="Enter your name"/>
                 </div>
@@ -39,7 +40,7 @@ class Players extends React.Component {
         return(
             <form onSubmit={this.handleSubmit}>
             {this.createNameForms()}
-            <input type="submit" value="Submit Players"/>
+            <input className="button" style={{paddingTop: "4px"}} type="submit" value="Play!"/>
             </form>
         )
     }

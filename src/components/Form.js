@@ -29,7 +29,7 @@ class Form extends Component {
             <div id="form-inputs">
             <div>
                     <label>Select No. of Players: </label> <br/>
-                    <select name="players" onChange={this.handleInput}>
+                    <select className= "dropdown-btn" name="players" onChange={this.handleInput}>
                     
                         <option value="" selected disabled>Please select an option</option>
                         <option value = "1"> 1 </option>
@@ -41,23 +41,22 @@ class Form extends Component {
                     
                 <div>
                     <label>Number of Questions: </label> <br/>
-                    <input type="number" min="1" max="20" onChange={this.handleInput} name="questions"/> 
+                    <input className= "dropdown-btn" type="number" min="1" max="20" onChange={this.handleInput} name="questions"/> 
                 </div>
                     
                 <div>
                     <label>Select Difficulty: </label> <br/>
-                        <select name="difficulty" onChange={this.handleInput}>
-                        
+                        <select name="difficulty" className= "dropdown-btn" onChange={this.handleInput}>
                             <option value = "" selected disabled>Please select an option</option> 
-                            <option value = "easy"> Easy </option>
-                            <option value = "medium"> Medium </option>
-                            <option value = "difficult"> Difficult </option>
+                            <option className= "dropdown-btn" value = "easy"> Easy </option>
+                            <option className= "dropdown-btn" value = "medium"> Medium </option>
+                            <option className= "dropdown-btn" value = "difficult"> Difficult </option>
                         </select>
                 </div>
                 
                 <div>
                     <label>Select Category: </label> <br/>
-                        <select name="category" onChange={this.handleInput} >
+                        <select className= "dropdown-btn" name="category" onChange={this.handleInput} >
                             
                             <option value="" selected disabled>Please select an option</option>
                             <option value = "9"> General Knowledge </option>
