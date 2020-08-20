@@ -1,7 +1,7 @@
 # Quiz Collab - Lap 2 Project
 
 ## Intro
-Albie, Alex, Bhuma and Despoina's quiz project. Built with React and Redux.
+Quiz project made by Albie ([@albieduffy](https://github.com/albieduffy)), Alex ([@AKP-13](https://github.com/AKP-13)), Bhuma ([@bhuma08](https://github.com/bhuma08)), and Despoina ([@despinaki](https://github.com/despinaki)). Built with React and Redux.
 
 ***
 
