@@ -59,7 +59,7 @@ class ResultsForm extends Component {
             <div>  
                 <h1>And the winner is...</h1>            
                 {this.props.answers ? this.displayScore() : "Answers are not here"}
-                <input type="submit" style={{paddingTop: "4px"}} className = "button" id="results-submit" value="Play Again" onClick={this.goToHome}/>
+                <input type="submit" style={{paddingTop: "4px",paddingLeft: "0.75%"}} className = "button" id="results-submit" value="Play Again" onClick={this.goToHome}/>
             </div>
         )
     }

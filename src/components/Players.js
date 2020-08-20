@@ -27,7 +27,7 @@ class Players extends React.Component {
         let players = Array(this.props.players).fill(`Player`)
         return (
             players.map((item, index) => (
-                <div key={index}>
+                <div key={index} className="players">
                 <label>{item}{index + 1}</label>
                 <input type ="text" name={index} onChange={this.handleChange} placeholder="Enter your name"/>
                 </div>
