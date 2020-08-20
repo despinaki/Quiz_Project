@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux"
 import Questions from "../components/Questions"
 import { withRouter } from 'react-router-dom';
+import './Quiz.css'
 
 class Quiz extends Component {
     renderQuestions = (results) => {
@@ -18,9 +19,10 @@ class Quiz extends Component {
 
     render(){
         return (
-            <div>
+            <div id="container">
+                <h1 id="heading">Questions : </h1>
                 {this.props.results ? this.renderQuestions(this.props.results) : "there are not results"}
-                <input type="submit" onClick= {this.goToResults}/>
+                <input id="submit-end"type="submit" onClick= {this.goToResults}/>
             </div>
         )
     }

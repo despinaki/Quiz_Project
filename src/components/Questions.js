@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import ReactDOM from 'react-dom'
 import { addAnswer } from '../actions/Actions'
 
+import './Questions.css'
+
 
 class Questions extends Component {
     constructor(props){
@@ -18,7 +20,7 @@ class Questions extends Component {
         
         return (
             <>
-            <h3>{this.props.question.question}</h3>
+            <h3 id="questions">{this.props.question.question}</h3>
             {this.renderAnswersForm(this.props.players)}
             </>
         )
@@ -48,14 +50,15 @@ class Questions extends Component {
     
     renderAnswersForm = (players) => {
         return players.map((item, index) => (
-            <div key={index}>
+            <div id="names" key={index}>
                 {item}
-                <div className={`btn-group`} >
+                <div id="btn-group" >
                     {this.state.answers.map((item1, idx) => (
-                        <button disabled={this.state[item]} onClick={this.click} key={idx} name={item} value={item1}>{item1}</button>
+                        <button disabled={this.state[item]} id="btn" onClick={this.click} key={idx} name={item} value={item1}>{item1}</button>  
                     ))}
                 </div>
             </div>
+            
         ))
     }
 
