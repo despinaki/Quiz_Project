@@ -3,10 +3,12 @@
 }
 
 #questions {
-    margin-left:15%;
-    font-size: 20px;
+    /* margin-left:15%; */
+    font-size: 25px;
     color: azure;
-    margin-right: 15%;
+    /* margin-right: 15%; */
+    text-align:center;
+    margin-bottom: 10px;
 }
 
 #btn-group {
@@ -16,7 +18,18 @@
 }
 
 #names {
-    margin-left: 15%;
     color:  #3BBA9C;
-    font-size: 15px; 
+    font-size: 20px;
+    font-weight: bold;
+    text-align:center;
+}
+
+.answers-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn {
+    width: 200px;
+    white-space: normal;
 }

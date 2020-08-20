@@ -35,7 +35,7 @@ class ResultsForm extends Component {
                 if (index == 0) {
                     
                     return (
-                        <p className="results" key={index}>{`👑 ${item[0]}:  ${item[1]} pts!`}</p>
+                        <p className="results" id="winner" key={index}>{`👑 ${item[0]}:  ${item[1]} pts!`}</p>
                     )
                 } else {
                     return (

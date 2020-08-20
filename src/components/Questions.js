@@ -20,7 +20,9 @@ class Questions extends Component {
         return (
             <>
             <h3 id="questions">{decodeURIComponent(this.props.question.question)}</h3>  
-            {this.renderAnswersForm(this.props.players)}
+            <div className="answers-container">
+                {this.renderAnswersForm(this.props.players)}
+            </div>
             <hr></hr>
             </>
         )
