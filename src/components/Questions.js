@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import ReactDOM from 'react-dom'
 import { addAnswer } from '../actions/Actions'
-
 import './Questions.css'
-
-
 class Questions extends Component {
     constructor(props){
         super(props)

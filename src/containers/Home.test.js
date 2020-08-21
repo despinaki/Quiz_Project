@@ -7,6 +7,6 @@ describe('Home', () => {
     })
 
     test("has title", () => {
-        expect(component.find('h1').text()).toContain("QuizApp");
+        expect(component.find('h1').text()).toContain("Crown");
     })
 })
