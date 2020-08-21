@@ -46,3 +46,12 @@ Quiz project made by Albie ([@albieduffy](https://github.com/albieduffy)), Alex 
 - Button duplication bug
 - Storing answer data for each player
 
+### Thursday
+
+#### Aims
+- Finish CSS :white_check_mark:
+- Start testing (ended the day with ~ 50%) :white_check_mark:
+
+#### Issues
+- Answer button styling
+- Testing
