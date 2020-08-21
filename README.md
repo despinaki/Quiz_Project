@@ -55,3 +55,13 @@ Quiz project made by Albie ([@albieduffy](https://github.com/albieduffy)), Alex 
 #### Issues
 - Answer button styling
 - Testing
+
+### Friday
+
+#### Aims
+- Finish testing :warning:
+- Prepare for presentation :white_check_mark:
+
+#### Issues
+- Mocking API calls
+- Accessing state in mock changes
